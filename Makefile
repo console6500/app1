@@ -1,3 +1,5 @@
+BUILD_ID=$(shell git rev-parse HEAD)
+
 all: build tag push
 
 build:
