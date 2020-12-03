@@ -1,0 +1,11 @@
+all: login tag push
+
+login:
+	aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 264318998405.dkr.ecr.us-west-2.amazonaws.com
+
+tag:
+	docker tag nginx:stable-alpine-perl 264318998405.dkr.ecr.us-west-2.amazonaws.com/nginx:stable-alpine-perl
+
+push:
+	docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/nginx:stable-alpine-perl
+
