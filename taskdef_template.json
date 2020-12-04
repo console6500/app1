@@ -1,11 +1,11 @@
 {
     "containerDefinitions": [
         {
-            "environment": [],
             "name": "REPO_NAME",
-            "mountPoints": [],
             "image": "IMAGE_NAME",
-            "cpu": 128,
+            "cpu": 256,
+            "memory": 512,
+            "essential": true,
             "portMappings": [
                 {
                     "protocol": "tcp",
@@ -13,8 +13,8 @@
                     "hostPort": 80
                 }
             ],
-            "memory": 128,
-            "essential": true,
+            "mountPoints": [],
+            "environment": [],
             "volumesFrom": []
         }
     ]

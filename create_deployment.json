@@ -1,0 +1,12 @@
+{
+    "applicationName": "snoh-aalegra",
+    "deploymentGroupName": "snoh-aalegra",
+    "revision": {
+        "revisionType": "S3",
+        "s3Location": {
+            "bucket": "pj-westworld-specs",
+            "key": "appspec.yaml",
+            "bundleType": "YAML"
+        }
+    }
+}

@@ -1,11 +1,11 @@
 {
     "containerDefinitions": [
         {
-            "environment": [],
             "name": "snoh-aalegra",
-            "mountPoints": [],
-            "image": "264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:358173690da8963fb5bd38ce849647f57239c448",
-            "cpu": 128,
+            "image": "264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:current:358173690da8963fb5bd38ce849647f57239c448",
+            "cpu": 256,
+            "memory": 512,
+            "essential": true,
             "portMappings": [
                 {
                     "protocol": "tcp",
@@ -13,8 +13,8 @@
                     "hostPort": 80
                 }
             ],
-            "memory": 128,
-            "essential": true,
+            "mountPoints": [],
+            "environment": [],
             "volumesFrom": []
         }
     ]
