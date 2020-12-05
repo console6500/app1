@@ -15,8 +15,10 @@ open:
 	open http://localhost:15000
 
 tag:
-	docker tag snoh-aalegra:latest 264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:$(BUILD_ID)
+	docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:$(BUILD_ID)
+	docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/founders-day:$(BUILD_ID)
 
 push:
 	docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:$(BUILD_ID)
+	docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/founders-day:$(BUILD_ID)
 
