@@ -1,4 +1,5 @@
-BUILD_ID=$(shell git rev-parse HEAD)
+BUILD_ID = $(shell git rev-parse HEAD)
+PROJECTS = snoh-aalegra founders-day laundry
 
 all: login build tag push
 
@@ -15,11 +16,7 @@ open:
 	open http://localhost:15000
 
 tag:
-	docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:$(BUILD_ID)
-	docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/founders-day:$(BUILD_ID)
-	docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/laundry:$(BUILD_ID)
+	$(foreach project, $(PROJECTS), docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project):$(BUILD_ID);)
 
 push:
-	docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/snoh-aalegra:$(BUILD_ID)
-	docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/founders-day:$(BUILD_ID)
-	docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/laundry:$(BUILD_ID)
+	$(foreach project, $(PROJECTS), docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project):$(BUILD_ID);)
