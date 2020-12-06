@@ -16,7 +16,9 @@ open:
 	open http://localhost:15000
 
 tag:
+	$(foreach project, $(PROJECTS), docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project):current;)
 	$(foreach project, $(PROJECTS), docker tag snoh-aalegra:$(BUILD_ID) 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project):$(BUILD_ID);)
 
 push:
+	$(foreach project, $(PROJECTS), docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project):current;)
 	$(foreach project, $(PROJECTS), docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project):$(BUILD_ID);)
