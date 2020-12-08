@@ -22,3 +22,10 @@ tag:
 
 push:
 	$(foreach project, $(PROJECTS), docker push 264318998405.dkr.ecr.us-west-2.amazonaws.com/$(project);)
+
+blue green json:
+	cp index.$@.html index.html
+	git add .
+	git commit -m "Deploy $@"
+	git push
+
