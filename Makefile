@@ -1,6 +1,5 @@
 BUILD_ID = $(shell git rev-parse HEAD)
-#PROJECTS = snoh-aalegra founders-day laundry multiple
-PROJECTS = multiple
+PROJECTS = service
 
 all: login build tag push
 
